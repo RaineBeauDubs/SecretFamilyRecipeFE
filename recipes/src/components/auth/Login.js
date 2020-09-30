@@ -29,11 +29,27 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-
+        <h2>Log-In</h2>
+        <form>
+          <input
+            name='username'
+            id='username'
+            placeholder='Username:'
+            value={this.state.username}
+            onChange={this.handleInput}
+          />
+          <input
+            name='password'
+            id='password'
+            placeholder='Password:'
+            value={this.state.password}
+            onChange={this.handleInput}
+          />
+          <button type='submit'>Submit</button>
+        </form>
       </div>
     )
   }
-
 }
 
 export default Login;
