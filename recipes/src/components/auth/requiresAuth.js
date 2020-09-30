@@ -13,16 +13,16 @@ axios.interceptors.request.use(
   }
 );
 
-class Authenticate extends React.Component {
-  render() {
-    const token = localStorage.getItem('token');
-    const notLoggedIn = <p>Not Logged In</p>;
-    return (
-      <>
-      {token ? <Component {...this.props} /> : notLoggedIn}
-      </>
-    )
+export default function (Component) {
+  return class Authenticate extends React.Component {
+    render() {
+      const token = localStorage.getItem('token');
+      const notLoggedIn = <p>Not Logged In</p>;
+      return (
+        <>
+          {token ? <Component {...this.props} /> : notLoggedIn}
+        </>
+      )
+    }
   }
 }
-
-export default Authenticate;

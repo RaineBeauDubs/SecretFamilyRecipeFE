@@ -22,6 +22,7 @@ class Register extends React.Component {
       .post(endpoint, this.state)
       .then(response => {
         localStorage.setItem('token', response.data.token)
+        this.props.history.push('/login');
       })
       .catch(error => console.log(error));
   }
