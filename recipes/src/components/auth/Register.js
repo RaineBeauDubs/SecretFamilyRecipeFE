@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class Login extends React.Component {
+class Register extends React.Component {
   state = {
     username: '',
     password: ''
@@ -16,7 +16,7 @@ class Login extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const endpoint = 'http://localhost:5000/api/auth/login'
+    const endpoint = 'http://localhost:5000/api/auth/register'
 
     axios
       .post(endpoint, this.state)
@@ -29,7 +29,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <h2>Log-In</h2>
+        <h2>Sign-Up</h2>
         <form>
           <input
             name='username'
@@ -52,4 +52,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default Register;
