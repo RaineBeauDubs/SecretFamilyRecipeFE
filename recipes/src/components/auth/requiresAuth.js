@@ -25,4 +25,4 @@ class Authenticate extends React.Component {
   }
 }
 
-export default Authenticate(Component);
+export default Authenticate;
