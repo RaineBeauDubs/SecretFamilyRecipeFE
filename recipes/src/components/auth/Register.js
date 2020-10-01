@@ -16,7 +16,7 @@ class Register extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const endpoint = 'http://localhost:5000/api/auth/register'
+    const endpoint = 'http://localhost:5000/api/auth/register';
 
     axios
       .post(endpoint, this.state)
@@ -31,7 +31,7 @@ class Register extends React.Component {
     return (
       <div>
         <h2>Sign-Up</h2>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             name='username'
             id='username'

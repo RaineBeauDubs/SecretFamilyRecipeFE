@@ -16,7 +16,7 @@ class Login extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const endpoint = 'http://localhost:5000/api/auth/login'
+    const endpoint = 'http://localhost:5000/api/auth/login';
 
     axios
       .post(endpoint, this.state)
@@ -31,7 +31,7 @@ class Login extends React.Component {
     return (
       <div>
         <h2>Log-In</h2>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             name='username'
             id='username'
