@@ -4,7 +4,7 @@ import requiresAuth from '../auth/requiresAuth';
 
 class RecipesHome extends React.Component {
   state = {
-    recipes = []
+    recipes: []
   }
 
   componentDidMount = () => {
@@ -24,6 +24,11 @@ class RecipesHome extends React.Component {
     return (
       <div>
         <h2>You made it past auth!</h2>
+        {this.state.recipes.map(recipe => {
+          return (
+            <h2>{recipe.title}</h2>
+          )
+        })}
       </div>
     )
   }
