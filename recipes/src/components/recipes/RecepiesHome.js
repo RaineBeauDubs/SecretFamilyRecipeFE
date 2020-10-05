@@ -2,6 +2,8 @@ import axios from 'axios';
 import React from 'react';
 import requiresAuth from '../auth/requiresAuth';
 
+import Recipe from './Recipe';
+
 class RecipesHome extends React.Component {
   state = {
     recipes: []
@@ -26,7 +28,15 @@ class RecipesHome extends React.Component {
         <h2>You made it past auth!</h2>
         {this.state.recipes.map(recipe => {
           return (
-            <h2>{recipe.title}</h2>
+            <Recipe
+              recipe={recipe}
+              key={recipe.id}
+              title={recipe.title}
+              source={recipe.source}
+              ingredients={recipe.ingredients}
+              instructions={recipe.instructions}
+              category={recipe.category}
+            />
           )
         })}
       </div>
