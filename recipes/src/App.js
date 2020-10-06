@@ -9,13 +9,10 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
-      <h2>Welcome to Secret Family Recipes!</h2>
-      <div>
         <Route exact path='/' component={Landing} />
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
         <Route path='/recipeshome' component={RecipesHome} />
-      </div>
     </div>
   );
 }

@@ -19,7 +19,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -46,3 +46,37 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.App {
+  background: #dcffd9;
+  height: 100vh;
+  padding: 5%;
+  text-align: center;
+}
+
+/* Code to create 'logo' */
+/* h1, h2, h3 {
+  font-size: 10rem;
+  font-weight: bold;
+  position: absolute;
+}
+
+h1, h3 {
+  font-style: italic;
+}
+
+h1 {
+  top: 10rem;
+  left: 10rem;
+}
+
+h2 {
+  top: 16rem;
+  left: 13rem;
+  color: white
+}
+
+h3 {
+  top: 22rem;
+  left: 16rem;
+} */
