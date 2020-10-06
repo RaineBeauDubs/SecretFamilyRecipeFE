@@ -1,4 +1,37 @@
 .logo {
-  width: 20rem;
+  width: 27rem;
   border-radius: 2rem;
+}
+
+.landingCont {
+  background: white;
+  padding: 10rem 7rem;
+  padding-bottom: 3rem;
+  margin-top: -7rem;
+  border-radius: 2rem;
+}
+
+.landingCont span {
+  font-style: italic;
+}
+
+.landingCont button {
+  width: 17rem;
+  height: 4rem;
+  background: #dcffd9;
+  margin: 1rem 2rem;
+  border: 2px solid #85CC7E;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+}
+
+.intro {
+  font-size: 1.8rem;
+  text-align: justify;
+}
+
+.loginPrompt {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 3rem;
 }

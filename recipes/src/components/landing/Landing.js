@@ -1,17 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './landing.css';
 
 const Landing = () => {
   return (
     <div>
-      <h2>Welcome to</h2>
       <img
         className="logo"
         src="/images/SFRLogo.png"
         alt="Secret Family Recipes"
       />
       <div className='landingCont'>
-        <p>Welcome to SecretFamilyRecipesWhateverItEndsUpBeing.com! Here, you have a great place to store your family's cherished and coveted dishes (I swear, if Aunt Cathy tries to steal my cookbook away into the bathroom to sneak a peek one more time...) in a safe and secure manor, whether they've been passed-down for generations, or you whipped up a materpiece in the kitchen this afternoon, you'll never have to forget (or let slip!) a single ingredient ever again!</p>
+        <p className='intro'>Welcome to SecretFamilyRecipesWhateverItEndsUpBeing.com! Here, you have a great place to store your family's cherished and coveted dishes <span>(I swear, if Aunt Cathy tries to steal my cookbook away into the bathroom to sneak a peek one more time...)</span> in a safe and secure manner, whether a recipe has been passed-down for generations, or you whipped up a materpiece in the kitchen this afternoon, you'll never have to forget <span>(or let slip!)</span> a single ingredient ever again!</p>
+        <p className='loginPrompt'>Log-in or create an account to begin your collection!</p>
+        <div className='bttnCont'>
+        <Link to='/login'>
+          <button>Log-In</button>
+        </Link>
+        <Link to='/register'>
+          <button>Sign-Up</button>
+        </Link>
+      </div>
       </div>
     </div>
   )
