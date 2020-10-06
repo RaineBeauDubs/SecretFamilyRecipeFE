@@ -1,8 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 
+// import requiresAuth from '../auth/requiresAuth';
+
 class AddStory extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       title: '',
       source: '',
@@ -18,15 +21,19 @@ class AddStory extends React.Component {
     });
   }
 
-  addNewStory = event => {
+  addNewRecipe = event => {
     event.preventDefault();
+    const token = localStorage.getItem('token');
+    const recipe = {
+      title: this.state.title,
+      source: this.state.source,
+      ingredients: this.state.ingredients,
+      instructions: this.state.instructions,
+      category: this.state.category
+    };
     axios
-      .post('http://localhost:5000/api/recipes', this.state)
-      .then(response => {
-        this.setState({
-          recipes: response.data
-        })
-      })
+      .post('http://localhost:5000/api/recipes', recipe, { headers: { authorization: token } })
+      .then(response => console.log(response))
       .catch(error => console.log(error))
   }
 
@@ -34,7 +41,7 @@ class AddStory extends React.Component {
     return (
       <div>
         <h2>Add Recipe:</h2>
-        <form onSubmit={this.addNewStory}>
+        <form onSubmit={this.addNewRecipe}>
           <input 
             type='text'
             name='title'
