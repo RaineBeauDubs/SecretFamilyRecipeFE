@@ -3,6 +3,7 @@ import React from 'react';
 import requiresAuth from '../auth/requiresAuth';
 
 import Recipe from './Recipe';
+import AddRecipe from './AddRecipe';
 
 class RecipesHome extends React.Component {
   state = {
@@ -39,6 +40,9 @@ class RecipesHome extends React.Component {
             />
           )
         })}
+        <AddRecipe
+          recipes={this.state.recipes}
+        />
       </div>
     )
   }
