@@ -5,7 +5,7 @@ import Login from './components/auth/Login';
 import RecipesHome from './components/recipes/RecepiesHome';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <h2>Welcome to Secret Family Recipes!</h2>
