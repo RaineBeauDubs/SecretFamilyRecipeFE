@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Landing from '../landing/Landing';
 
 axios.defaults.baseURL = 'http://localhost:5000/api';
 
@@ -20,7 +21,7 @@ export default function (Component) {
       const notLoggedIn = <p>Not Logged In</p>;
       return (
         <>
-          {token ? <Component {...this.props} /> : notLoggedIn}
+          {token ? <Component {...this.props} /> : <Landing />}
         </>
       )
     }
