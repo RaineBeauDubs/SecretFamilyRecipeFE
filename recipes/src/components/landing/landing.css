@@ -25,6 +25,11 @@
   font-size: 1.7rem;
 }
 
+.landingCont button:hover {
+  background: #85CC7E;
+  border: 2px solid #dcffd9;
+}
+
 .intro {
   font-size: 1.8rem;
   text-align: justify;

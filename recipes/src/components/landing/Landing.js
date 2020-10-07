@@ -16,10 +16,10 @@ const Landing = () => {
         <p className='loginPrompt'>Log-in or create an account to begin your collection!</p>
         <div className='bttnCont'>
         <Link to='/login'>
-          <button>Log-In</button>
+          <button className='fadeBttn'>Log-In</button>
         </Link>
         <Link to='/register'>
-          <button>Sign-Up</button>
+          <button className='fadeBttn'>Sign-Up</button>
         </Link>
       </div>
       </div>

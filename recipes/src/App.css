@@ -56,6 +56,26 @@ table {
   text-align: center;
 }
 
+/* Reusable Animations */
+.fadeBttn {
+  transition: background-color 1s ease-in-out;
+}
+.fadeBttn:hover {
+  animation-name: bttnFade;
+  animation-duration: 1s;
+}
+
+@keyframes bttnFade {
+  from {
+    background: #dcffd9;
+    border: 2px solid #85CC7E;
+
+  }
+  to {
+    background: #85CC7E;
+    border: 2px solid #dcffd9;
+  }
+}
 
 /* Code to create 'logo' */
 /* h1, h2, h3 {
