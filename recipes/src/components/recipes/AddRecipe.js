@@ -1,9 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 
-// import requiresAuth from '../auth/requiresAuth';
+const token = localStorage.getItem('token');
+const reqOps = {
+  headers: {
+    authorization: token
+  }
+};
 
-class AddStory extends React.Component {
+
+class AddRecipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,9 +17,11 @@ class AddStory extends React.Component {
       source: '',
       ingredients: '',
       instructions: '',
-      category: ''
+      category: '',
+      user_id: ''
     }
   }
+
 
   handleChange = event => {
     this.setState({
@@ -21,18 +29,18 @@ class AddStory extends React.Component {
     });
   }
 
-  addNewRecipe = event => {
+  addNewRecipe = (event) => {
     event.preventDefault();
-    const token = localStorage.getItem('token');
     const recipe = {
       title: this.state.title,
       source: this.state.source,
       ingredients: this.state.ingredients,
       instructions: this.state.instructions,
-      category: this.state.category
+      category: this.state.category,
+      user_id: this.props.getUserId(token)
     };
     axios
-      .post('http://localhost:5000/api/recipes', recipe, { headers: { authorization: token } })
+      .post('http://localhost:5000/api/recipes', recipe, reqOps)
       .then(response => console.log(response))
       .catch(error => console.log(error))
   }
@@ -42,35 +50,35 @@ class AddStory extends React.Component {
       <div>
         <h2>Add Recipe:</h2>
         <form onSubmit={this.addNewRecipe}>
-          <input 
+          <input
             type='text'
             name='title'
             placeholder='Title'
             value={this.state.title}
             onChange={this.handleChange}
           />
-          <input 
+          <input
             type='text'
             name='source'
             placeholder='Source'
             value={this.state.source}
             onChange={this.handleChange}
           />
-          <input 
+          <input
             type='text'
             name='ingredients'
             placeholder='Ingredients'
             value={this.state.ingredients}
             onChange={this.handleChange}
           />
-          <input 
+          <input
             type='text'
             name='instructions'
             placeholder='Instructions'
             value={this.state.instructions}
             onChange={this.handleChange}
           />
-          <input 
+          <input
             type='text'
             name='category'
             placeholder='Category'
@@ -84,4 +92,4 @@ class AddStory extends React.Component {
   }
 }
 
-export default AddStory;
+export default AddRecipe;

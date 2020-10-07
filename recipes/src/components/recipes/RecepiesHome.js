@@ -5,9 +5,13 @@ import requiresAuth from '../auth/requiresAuth';
 import Recipe from './Recipe';
 import AddRecipe from './AddRecipe';
 
+const token = localStorage.getItem('token');
+
+
 class RecipesHome extends React.Component {
   state = {
-    recipes: []
+    recipes: [],
+    userId: ''
   }
 
   componentDidMount = () => {
@@ -15,7 +19,8 @@ class RecipesHome extends React.Component {
       .get('http://localhost:5000/api/recipes')
       .then(response => {
         this.setState({
-          recipes: response.data
+          recipes: response.data,
+          userId: this.getUserId(token)
         });
       })
       .catch(error => {
@@ -23,25 +28,36 @@ class RecipesHome extends React.Component {
       });
   };
 
+  getUserId = (token) => {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    const id = (JSON.parse(window.atob(base64)).subject);
+    return id;
+  }
+
   render() {
     return (
       <div>
         <h2>You made it past auth!</h2>
         {this.state.recipes.map(recipe => {
-          return (
-            <Recipe
-              recipe={recipe}
-              key={recipe.id}
-              title={recipe.title}
-              source={recipe.source}
-              ingredients={recipe.ingredients}
-              instructions={recipe.instructions}
-              category={recipe.category}
-            />
-          )
+          if (recipe.user_id == this.state.userId) {
+            return (
+              <Recipe
+                recipe={recipe}
+                key={recipe.id}
+                title={recipe.title}
+                source={recipe.source}
+                ingredients={recipe.ingredients}
+                instructions={recipe.instructions}
+                category={recipe.category}
+                userId={recipe.user_id}
+              />
+            )
+          }
         })}
         <AddRecipe
           recipes={this.state.recipes}
+          getUserId={this.getUserId}
         />
       </div>
     )
