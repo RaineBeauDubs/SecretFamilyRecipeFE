@@ -8,6 +8,7 @@ const Recipe = props => {
       <p>{props.ingredients}</p>
       <p>{props.instructions}</p>
       <p>{props.category}</p>
+      <p>{props.userId}</p>
     </div>
   )
 }

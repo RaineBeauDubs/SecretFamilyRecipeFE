@@ -12,26 +12,23 @@ const reqOps = {
 // import requiresAuth from '../auth/requiresAuth';
 
 class AddStory extends React.Component {
-  state = {
-    title: '',
-    source: '',
-    ingredients: '',
-    instructions: '',
-    category: '',
-    user_id: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      source: '',
+      ingredients: '',
+      instructions: '',
+      category: '',
+      user_id: ''
+    }
   }
+
 
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
-  }
-
-  parseJWT = (token) => {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace('-', '+').replace('_', '/');
-    const id = (JSON.parse(window.atob(base64)).subject);
-    return id;
   }
 
   addNewRecipe = (event) => {
@@ -42,7 +39,7 @@ class AddStory extends React.Component {
       ingredients: this.state.ingredients,
       instructions: this.state.instructions,
       category: this.state.category,
-      user_id: this.parseJWT(token)
+      user_id: this.props.getUserId(token)
     };
     axios
       .post('http://localhost:5000/api/recipes', recipe, reqOps)
