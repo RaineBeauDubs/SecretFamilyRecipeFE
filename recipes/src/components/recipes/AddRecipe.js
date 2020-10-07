@@ -2,6 +2,11 @@ import React from 'react';
 import axios from 'axios';
 
 const token = localStorage.getItem('token');
+const reqOps = {
+  headers: {
+    authorization: token
+  }
+};
 
 
 // import requiresAuth from '../auth/requiresAuth';
@@ -13,13 +18,20 @@ class AddStory extends React.Component {
     ingredients: '',
     instructions: '',
     category: '',
-    user_id: 12
+    user_id: ''
   }
 
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
+  }
+
+  parseJWT = (token) => {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    const id = (JSON.parse(window.atob(base64)).subject);
+    return id;
   }
 
   addNewRecipe = (event) => {
@@ -29,10 +41,11 @@ class AddStory extends React.Component {
       source: this.state.source,
       ingredients: this.state.ingredients,
       instructions: this.state.instructions,
-      category: this.state.category
+      category: this.state.category,
+      user_id: this.parseJWT(token)
     };
     axios
-      .post('http://localhost:5000/api/recipes', this.state, { headers: { authorization: token } })
+      .post('http://localhost:5000/api/recipes', recipe, reqOps)
       .then(response => console.log(response))
       .catch(error => console.log(error))
   }
