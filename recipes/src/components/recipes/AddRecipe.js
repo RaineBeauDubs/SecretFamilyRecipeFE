@@ -1,18 +1,19 @@
 import React from 'react';
 import axios from 'axios';
 
+const token = localStorage.getItem('token');
+
+
 // import requiresAuth from '../auth/requiresAuth';
 
 class AddStory extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      source: '',
-      ingredients: '',
-      instructions: '',
-      category: ''
-    }
+  state = {
+    title: '',
+    source: '',
+    ingredients: '',
+    instructions: '',
+    category: '',
+    user_id: 12
   }
 
   handleChange = event => {
@@ -21,9 +22,8 @@ class AddStory extends React.Component {
     });
   }
 
-  addNewRecipe = event => {
+  addNewRecipe = (event) => {
     event.preventDefault();
-    const token = localStorage.getItem('token');
     const recipe = {
       title: this.state.title,
       source: this.state.source,
@@ -32,7 +32,7 @@ class AddStory extends React.Component {
       category: this.state.category
     };
     axios
-      .post('http://localhost:5000/api/recipes', recipe, { headers: { authorization: token } })
+      .post('http://localhost:5000/api/recipes', this.state, { headers: { authorization: token } })
       .then(response => console.log(response))
       .catch(error => console.log(error))
   }
@@ -42,35 +42,35 @@ class AddStory extends React.Component {
       <div>
         <h2>Add Recipe:</h2>
         <form onSubmit={this.addNewRecipe}>
-          <input 
+          <input
             type='text'
             name='title'
             placeholder='Title'
             value={this.state.title}
             onChange={this.handleChange}
           />
-          <input 
+          <input
             type='text'
             name='source'
             placeholder='Source'
             value={this.state.source}
             onChange={this.handleChange}
           />
-          <input 
+          <input
             type='text'
             name='ingredients'
             placeholder='Ingredients'
             value={this.state.ingredients}
             onChange={this.handleChange}
           />
-          <input 
+          <input
             type='text'
             name='instructions'
             placeholder='Instructions'
             value={this.state.instructions}
             onChange={this.handleChange}
           />
-          <input 
+          <input
             type='text'
             name='category'
             placeholder='Category'
