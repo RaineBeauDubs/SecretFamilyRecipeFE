@@ -9,9 +9,7 @@ const reqOps = {
 };
 
 
-// import requiresAuth from '../auth/requiresAuth';
-
-class AddStory extends React.Component {
+class AddRecipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -94,4 +92,4 @@ class AddStory extends React.Component {
   }
 }
 
-export default AddStory;
+export default AddRecipe;
