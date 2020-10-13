@@ -42,16 +42,18 @@ class RecipesHome extends React.Component {
         {this.state.recipes.map(recipe => {
           if (recipe.user_id == this.state.userId) {
             return (
-              <Recipe
-                recipe={recipe}
-                key={recipe.id}
-                title={recipe.title}
-                source={recipe.source}
-                ingredients={recipe.ingredients}
-                instructions={recipe.instructions}
-                category={recipe.category}
-                userId={recipe.user_id}
-              />
+              <div>
+                <Recipe
+                  recipe={recipe}
+                  key={recipe.id}
+                  title={recipe.title}
+                  source={recipe.source}
+                  ingredients={recipe.ingredients}
+                  instructions={recipe.instructions}
+                  category={recipe.category}
+                  userId={recipe.user_id}
+                />
+              </div>
             )
           }
         })}
