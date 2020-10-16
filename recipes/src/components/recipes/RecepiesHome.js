@@ -40,7 +40,7 @@ class RecipesHome extends React.Component {
       <div>
         <h2>You made it past auth!</h2>
         {this.state.recipes.map(recipe => {
-          if (recipe.user_id == this.state.userId) {
+          if (recipe.user_id === this.state.userId) {
             return (
               <div>
                 <Recipe
