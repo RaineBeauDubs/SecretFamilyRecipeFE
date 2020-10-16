@@ -1,9 +1,25 @@
 import React from 'react';
+import axios from 'axios';
+
+const token = localStorage.getItem('token');
+const reqOps = {
+  headers: {
+    authorization: token
+  }
+};
 
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  deleteRecepe() {
+    axios
+      .delete(`http://localhost:5000/api/recipes/${this.props.key}`, reqOps)
+      .then(response => console.log(response))
+      .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div>
