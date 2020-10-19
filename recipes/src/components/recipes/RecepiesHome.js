@@ -40,18 +40,21 @@ class RecipesHome extends React.Component {
       <div>
         <h2>You made it past auth!</h2>
         {this.state.recipes.map(recipe => {
-          if (recipe.user_id == this.state.userId) {
+          if (recipe.user_id === this.state.userId) {
             return (
-              <Recipe
-                recipe={recipe}
-                key={recipe.id}
-                title={recipe.title}
-                source={recipe.source}
-                ingredients={recipe.ingredients}
-                instructions={recipe.instructions}
-                category={recipe.category}
-                userId={recipe.user_id}
-              />
+              <div>
+                <Recipe
+                  recipe={recipe}
+                  id={recipe.id}
+                  key={recipe.id}
+                  title={recipe.title}
+                  source={recipe.source}
+                  ingredients={recipe.ingredients}
+                  instructions={recipe.instructions}
+                  category={recipe.category}
+                  userId={recipe.user_id}
+                />
+              </div>
             )
           }
         })}
