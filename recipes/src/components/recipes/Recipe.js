@@ -15,7 +15,7 @@ class Recipe extends React.Component {
 
   deleteRecepe() {
     axios
-      .delete(`http://localhost:5000/api/recipes/${this.props.key}`, reqOps)
+      .delete(`http://localhost:5000/api/recipes/${this.props.id}`, reqOps)
       .then(response => console.log(response))
       .catch(error => console.log(error))
   }
@@ -23,7 +23,10 @@ class Recipe extends React.Component {
   render() {
     return (
       <div>
+        <div>
         <h2>{this.props.title}</h2>
+        <button onClick={() => this.deleteRecepe()}>Delete</button>
+        </div>
         <h3>{this.props.source}</h3>
         <p>{this.props.ingredients}</p>
         <p>{this.props.instructions}</p>

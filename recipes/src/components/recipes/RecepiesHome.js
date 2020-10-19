@@ -45,6 +45,7 @@ class RecipesHome extends React.Component {
               <div>
                 <Recipe
                   recipe={recipe}
+                  id={recipe.id}
                   key={recipe.id}
                   title={recipe.title}
                   source={recipe.source}
