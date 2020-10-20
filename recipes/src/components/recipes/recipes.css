@@ -1,0 +1,10 @@
+.recipeCont button {
+  background: #dcffd9;
+  border: 2px solid #85CC7E;
+  border-radius: 0.5rem;
+}
+
+.recipeCont button:hover {
+  background: #85CC7E;
+  border: 2px solid #dcffd9;
+}

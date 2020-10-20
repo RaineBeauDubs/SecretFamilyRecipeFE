@@ -5,6 +5,8 @@ import requiresAuth from '../auth/requiresAuth';
 import Recipe from './Recipe';
 import AddRecipe from './AddRecipe';
 
+import './recipes.css';
+
 const token = localStorage.getItem('token');
 
 
