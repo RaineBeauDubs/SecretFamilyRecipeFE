@@ -8,3 +8,15 @@
   background: #85CC7E;
   border: 2px solid #dcffd9;
 }
+
+.recipeHomeCont {
+  background: white;
+  padding: 10rem;
+  border-radius: 2rem;
+}
+
+.recipeCont {
+  background: #dcffd9;
+  margin: 1rem;
+  border-radius: 1rem;
+}
