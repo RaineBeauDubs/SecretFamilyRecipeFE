@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import requiresAuth from '../auth/requiresAuth';
+import { Route, Link } from 'react-router-dom';
 
 import Recipe from './Recipe';
 import AddRecipe from './AddRecipe';
@@ -40,11 +41,11 @@ class RecipesHome extends React.Component {
   render() {
     return (
       <div className='recipeHomeCont'>
-        <h2>You made it past auth!</h2>
         {this.state.recipes.map(recipe => {
           if (recipe.user_id === this.state.userId) {
             return (
               <div>
+                <Link to={`/recipes/${recipe.id}`}>
                 <Recipe
                   recipe={recipe}
                   id={recipe.id}
@@ -56,6 +57,7 @@ class RecipesHome extends React.Component {
                   category={recipe.category}
                   userId={recipe.user_id}
                 />
+                </Link>
               </div>
             )
           }
