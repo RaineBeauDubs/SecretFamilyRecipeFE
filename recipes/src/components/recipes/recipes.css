@@ -1,0 +1,27 @@
+.recipeCont button {
+  background: #dcffd9;
+  border: 2px solid #85CC7E;
+  border-radius: 0.5rem;
+}
+
+.recipeCont button:hover {
+  background: #85CC7E;
+  border: 2px solid #dcffd9;
+}
+
+.recipeHomeCont {
+  background: white;
+  padding: 10rem;
+  border-radius: 2rem;
+}
+
+.recipeCont {
+  background: #dcffd9;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.recipeLink {
+  text-decoration: none;
+  color: black;
+}

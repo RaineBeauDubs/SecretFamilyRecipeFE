@@ -22,10 +22,10 @@ class Recipe extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='recipeCont'>
         <div>
         <h2>{this.props.title}</h2>
-        <button onClick={() => this.deleteRecepe()}>Delete</button>
+        <button className='fadeBttn' onClick={() => this.deleteRecepe()}>Delete</button>
         </div>
         <h3>{this.props.source}</h3>
         <p>{this.props.ingredients}</p>
