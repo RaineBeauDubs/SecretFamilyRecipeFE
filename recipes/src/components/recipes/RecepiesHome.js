@@ -45,7 +45,7 @@ class RecipesHome extends React.Component {
           if (recipe.user_id === this.state.userId) {
             return (
               <div>
-                <Link to={`/recipes/${recipe.id}`}>
+                <Link className="recipeLink" to={`/recipes/${recipe.id}`}>
                 <Recipe
                   recipe={recipe}
                   id={recipe.id}
