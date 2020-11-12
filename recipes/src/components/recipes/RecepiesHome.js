@@ -44,7 +44,7 @@ class RecipesHome extends React.Component {
       <div className='recipeHomeCont'>
         <Route 
           path="/my-recipes"
-          render={props => (
+          render={(props) => (
             <MyRecipes 
               {...props} 
               recipes={this.state.recipes} 
@@ -58,7 +58,7 @@ class RecipesHome extends React.Component {
         /> */}
         <Route 
           path="/add-recipe"
-          render={props => (
+          render={(props) => (
             <AddRecipe 
               {...props} 
               recipes={this.state.recipes} 
