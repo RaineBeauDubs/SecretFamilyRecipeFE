@@ -35,13 +35,16 @@ class RecipesHome extends React.Component {
     const base64Url = token.split('.')[1];
     const base64 = base64Url.replace('-', '+').replace('_', '/');
     const id = (JSON.parse(window.atob(base64)).subject);
-    console.log(id);
     return id;
   }
 
   render() {
     return (
       <div className='recipeHomeCont'>
+        {/* <MyRecipes
+          recipes={this.state.recipes}
+          userId={this.state.userId}
+        />  */}
         <Route 
           path="/my-recipes"
           render={(props) => (
@@ -49,6 +52,7 @@ class RecipesHome extends React.Component {
               {...props} 
               recipes={this.state.recipes} 
               userId={this.state.userId}
+              title="helloworld"
             />
           )}
         />
@@ -56,12 +60,12 @@ class RecipesHome extends React.Component {
           recipes={this.state.recipes}
           getUserId={this.getUserId}
         /> */}
-        <Route 
+        <Route
           path="/add-recipe"
           render={(props) => (
-            <AddRecipe 
-              {...props} 
-              recipes={this.state.recipes} 
+            <AddRecipe
+              {...props}
+              recipes={this.state.recipes}
               getUserId={this.getUserId}
             />
           )}
