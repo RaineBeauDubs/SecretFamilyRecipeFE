@@ -1,4 +1,12 @@
 import React from 'react';
+import axios from 'axios';
+
+const token = localStorage.getItem('token');
+const reqOps = {
+  headers: {
+    authorization: token
+  }
+};
 
 class UpdateRecipe extends React.Component {
   constructor(props) {
@@ -9,7 +17,7 @@ class UpdateRecipe extends React.Component {
       ingredients: this.props.ingredients,
       instructions: this.props.instructions,
       category: this.props.category,
-      user_id: this.props.user_id
+      userId: this.props.userId
     }
   }
 
@@ -19,10 +27,25 @@ class UpdateRecipe extends React.Component {
     });
   }
 
+  updateRecipe() {
+    const recipe = {
+      title: this.state.title,
+      source: this.state.source,
+      ingredients: this.state.ingredients,
+      instructions: this.state.instructions,
+      category: this.state.category,
+      user_id: this.state.userId
+    };
+    axios
+      .put(`http://localhost:5000/api/recipes/${this.props.id}`, recipe, reqOps)
+      .then(response => console.log(response))
+      .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div>
-      <form onSubmit={this.addNewRecipe}>
+      <form onSubmit={this.updateRecipe()}>
           <input
             type='text'
             name='title'
@@ -53,7 +76,7 @@ class UpdateRecipe extends React.Component {
             value={this.state.category}
             onChange={this.handleChange}
           />
-          <button type='submit'>Add recipe!</button>
+          <button type='submit'>Update recipe!</button>
         </form>
       </div>
     )
