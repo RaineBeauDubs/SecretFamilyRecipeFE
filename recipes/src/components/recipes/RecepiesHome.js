@@ -41,11 +41,15 @@ class RecipesHome extends React.Component {
   render() {
     return (
       <div className='recipeHomeCont'>
-        {/* <MyRecipes
+        <MyRecipes
           recipes={this.state.recipes}
           userId={this.state.userId}
-        />  */}
-        <Route 
+        /> 
+        <AddRecipe
+          recipes={this.state.recipes}
+          getUserId={this.getUserId}
+        />
+        {/* <Route 
           path="/my-recipes"
           render={(props) => (
             <MyRecipes 
@@ -55,12 +59,8 @@ class RecipesHome extends React.Component {
               title="helloworld"
             />
           )}
-        />
-        {/* <AddRecipe
-          recipes={this.state.recipes}
-          getUserId={this.getUserId}
         /> */}
-        <Route
+        {/* <Route
           path="/add-recipe"
           render={(props) => (
             <AddRecipe
@@ -69,7 +69,7 @@ class RecipesHome extends React.Component {
               getUserId={this.getUserId}
             />
           )}
-        />
+        /> */}
       </div>
     )
   }

@@ -13,8 +13,7 @@ const MyRecipes = ({recipes, userId, title}) => {
   // }
 
   return (
-    <div className='recipeHomeCont'>
-      <h2>Hello {title}</h2>
+    <div>
       {recipes.map(recipe => {
         if (recipe.user_id == userId) {
           return (
