@@ -3,15 +3,7 @@ import React from 'react';
 import Recipe from './Recipe';
 
 
-const MyRecipes = ({recipes, userId, title}) => {
-  // constructor(props) {
-  //   super(props);
-  //   // this.state = {
-  //   //   recipes: this.props.recipes,
-  //   //   userId: this.props.userId
-  //   // }
-  // }
-
+const MyRecipes = ({recipes, userId}) => {
   return (
     <div>
       {recipes.map(recipe => {

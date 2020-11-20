@@ -49,27 +49,6 @@ class RecipesHome extends React.Component {
           recipes={this.state.recipes}
           getUserId={this.getUserId}
         />
-        {/* <Route 
-          path="/my-recipes"
-          render={(props) => (
-            <MyRecipes 
-              {...props} 
-              recipes={this.state.recipes} 
-              userId={this.state.userId}
-              title="helloworld"
-            />
-          )}
-        /> */}
-        {/* <Route
-          path="/add-recipe"
-          render={(props) => (
-            <AddRecipe
-              {...props}
-              recipes={this.state.recipes}
-              getUserId={this.getUserId}
-            />
-          )}
-        /> */}
       </div>
     )
   }
