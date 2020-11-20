@@ -3,7 +3,7 @@ import React from 'react';
 import requiresAuth from '../auth/requiresAuth';
 import { Route, Link } from 'react-router-dom';
 
-import Recipe from './Recipe';
+import MyRecipes from './MyRecipes';
 import AddRecipe from './AddRecipe';
 
 import './recipes.css';
@@ -41,27 +41,10 @@ class RecipesHome extends React.Component {
   render() {
     return (
       <div className='recipeHomeCont'>
-        {this.state.recipes.map(recipe => {
-          if (recipe.user_id === this.state.userId) {
-            return (
-              <div>
-                <Link className="recipeLink" to={`/recipes/${recipe.id}`}>
-                <Recipe
-                  recipe={recipe}
-                  id={recipe.id}
-                  key={recipe.id}
-                  title={recipe.title}
-                  source={recipe.source}
-                  ingredients={recipe.ingredients}
-                  instructions={recipe.instructions}
-                  category={recipe.category}
-                  userId={recipe.user_id}
-                />
-                </Link>
-              </div>
-            )
-          }
-        })}
+        <MyRecipes
+          recipes={this.state.recipes}
+          userId={this.state.userId}
+        /> 
         <AddRecipe
           recipes={this.state.recipes}
           getUserId={this.getUserId}
