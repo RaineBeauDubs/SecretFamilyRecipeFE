@@ -14,7 +14,7 @@ class Recipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isActive: false
+      isActive: true
     }
   }
 
@@ -44,8 +44,8 @@ class Recipe extends React.Component {
         <p>{this.props.instructions}</p>
         <p>{this.props.category}</p>
         <p>{this.props.userId}</p>
+        <button className='fadeBttn' onClick={() => this.toggleClassName()}>Update Recipe</button>
         <div className={isActive ? "updateClose" : "updateOpen"}>
-          <button className='fadeBttn' onClick={() => this.toggleClassName()}>Update Recipe</button>
           <UpdateRecipe
             recipe={this.props.recipe}
             id={this.props.id}

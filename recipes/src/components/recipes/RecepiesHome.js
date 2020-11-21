@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import requiresAuth from '../auth/requiresAuth';
-import { Route, Link } from 'react-router-dom';
 
 import MyRecipes from './MyRecipes';
 import AddRecipe from './AddRecipe';
