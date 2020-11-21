@@ -1,9 +1,15 @@
 import React from 'react';
 
-const NavBar = () => {
+const NavBar = ({logOut}) => {
+
   return (
     <div>
-      <h1>Hello!</h1>
+    <img
+        className="navLogo"
+        src="/images/SFRLogo.png"
+        alt="Secret Family Recipes"
+      />
+      <button className='fadeBttn' onClick={() => logOut()}>Log Out</button>
     </div>
   )
 }

@@ -11,7 +11,7 @@
 
 .recipeHomeCont {
   background: white;
-  padding: 10rem;
+  padding: 3rem;
   border-radius: 2rem;
 }
 
@@ -32,4 +32,10 @@
 
 .updateClose {
   display: none;
+}
+
+.navLogo {
+  width: 11rem;
+  border-radius: 1.5rem;
+  margin-top: -5rem;
 }

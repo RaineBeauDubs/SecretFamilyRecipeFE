@@ -29,8 +29,7 @@ class AddRecipe extends React.Component {
     });
   }
 
-  addNewRecipe = (event) => {
-    event.preventDefault();
+  addNewRecipe = () => {
     const recipe = {
       title: this.state.title,
       source: this.state.source,
