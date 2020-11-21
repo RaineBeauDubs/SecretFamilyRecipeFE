@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import requiresAuth from '../auth/requiresAuth';
 
+import NavBar from './NavBar';
 import MyRecipes from './MyRecipes';
 import AddRecipe from './AddRecipe';
 
@@ -40,6 +41,7 @@ class RecipesHome extends React.Component {
   render() {
     return (
       <div className='recipeHomeCont'>
+        <NavBar />
         <MyRecipes
           recipes={this.state.recipes}
           userId={this.state.userId}
