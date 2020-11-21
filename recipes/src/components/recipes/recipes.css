@@ -25,3 +25,11 @@
   text-decoration: none;
   color: black;
 }
+
+.updateOpen {
+  border: 1px solid blue;
+}
+
+.updateClose {
+  border: 1px solid red;
+}
