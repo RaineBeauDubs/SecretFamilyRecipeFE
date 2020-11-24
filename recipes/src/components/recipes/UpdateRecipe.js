@@ -76,7 +76,7 @@ class UpdateRecipe extends React.Component {
             value={this.state.category}
             onChange={this.handleChange}
           />
-          <button type='submit'>Update recipe!</button>
+          <button  className='fadeBttn' type='submit'>Update recipe!</button>
         </form>
       </div>
     )

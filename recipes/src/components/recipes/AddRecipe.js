@@ -18,7 +18,8 @@ class AddRecipe extends React.Component {
       ingredients: '',
       instructions: '',
       category: '',
-      user_id: ''
+      user_id: '',
+      isActive: true
     }
   }
 
@@ -27,6 +28,12 @@ class AddRecipe extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     });
+  }
+
+  toggleClassName = () => {
+    this.setState({
+      isActive: !this.state.isActive
+    })
   }
 
   addNewRecipe = () => {
@@ -45,10 +52,11 @@ class AddRecipe extends React.Component {
   }
 
   render() {
+    const isActive = this.state.isActive;
     return (
       <div>
-        <h2>Add Recipe:</h2>
-        <form onSubmit={this.addNewRecipe}>
+      <button className='fadeBttn' onClick={() => this.toggleClassName()}>Add a New Recipe!</button>
+        <form className={isActive ? "updateClose" : "updateOpen"} onSubmit={this.addNewRecipe}>
           <input
             type='text'
             name='title'
