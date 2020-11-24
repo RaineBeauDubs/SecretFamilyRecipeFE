@@ -6,7 +6,6 @@
 
 .recipeCont button:hover {
   background: #85CC7E;
-  border: 2px solid #dcffd9;
 }
 
 .recipeHomeCont {
@@ -32,6 +31,13 @@
 
 .updateClose {
   display: none;
+}
+
+/* NAVIGATION STYLES */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
 }
 
 .navLogo {
