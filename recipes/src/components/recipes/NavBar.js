@@ -4,7 +4,7 @@ const NavBar = ({logOut}) => {
 
   return (
     <div className='nav'>
-    <button className='fadeBttn' onClick={() => logOut()}>Log Out</button>
+    <button className='invisible' onClick={() => logOut()}>Log Out</button>
 
     <img
         className='navLogo'

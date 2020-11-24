@@ -84,7 +84,7 @@ class AddRecipe extends React.Component {
             value={this.state.category}
             onChange={this.handleChange}
           />
-          <button type='submit'>Add recipe!</button>
+          <button className='fadeBttn' type='submit'>Add recipe!</button>
         </form>
       </div>
     )

@@ -63,6 +63,7 @@ table {
   border-radius: 0.5rem;
   transition: background-color 1s ease-in-out;
   padding: 0.15rem 0.3rem;
+  margin: 0.3rem;
 }
 .fadeBttn:hover {
   animation-name: bttnFade;
@@ -78,6 +79,13 @@ table {
   to {
     background: #85CC7E;
   }
+}
+
+/* TEMPORARY NAVBAR FIX */
+
+.invisible {
+  color: white;
+  background: white;
 }
 
 /* Code to create 'logo' */
