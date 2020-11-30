@@ -18,7 +18,8 @@ class AddRecipe extends React.Component {
       ingredients: '',
       instructions: '',
       category: '',
-      user_id: ''
+      user_id: '',
+      isActive: true
     }
   }
 
@@ -29,8 +30,13 @@ class AddRecipe extends React.Component {
     });
   }
 
-  addNewRecipe = (event) => {
-    event.preventDefault();
+  toggleClassName = () => {
+    this.setState({
+      isActive: !this.state.isActive
+    })
+  }
+
+  addNewRecipe = () => {
     const recipe = {
       title: this.state.title,
       source: this.state.source,
@@ -46,10 +52,11 @@ class AddRecipe extends React.Component {
   }
 
   render() {
+    const isActive = this.state.isActive;
     return (
       <div>
-        <h2>Add Recipe:</h2>
-        <form onSubmit={this.addNewRecipe}>
+      <button className='fadeBttn' onClick={() => this.toggleClassName()}>Add a New Recipe!</button>
+        <form className={isActive ? "updateClose" : "updateOpen"} onSubmit={this.addNewRecipe}>
           <input
             type='text'
             name='title'
@@ -85,7 +92,7 @@ class AddRecipe extends React.Component {
             value={this.state.category}
             onChange={this.handleChange}
           />
-          <button type='submit'>Add recipe!</button>
+          <button className='fadeBttn' type='submit'>Add recipe!</button>
         </form>
       </div>
     )

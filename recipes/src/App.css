@@ -52,29 +52,40 @@ table {
 }
 
 .App {
-  padding: 5% 10%;
+  padding: 7% 10%;
   text-align: center;
 }
 
-/* Reusable Animations */
+/* REUSABLE ANIMATIONS */
 .fadeBttn {
+  background: #dcffd9;
+  border: 2px solid #85CC7E;
+  border-radius: 0.5rem;
   transition: background-color 1s ease-in-out;
+  padding: 0.15rem 0.3rem;
+  margin: 0.3rem;
 }
 .fadeBttn:hover {
   animation-name: bttnFade;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
+  background: #85CC7E;
 }
 
 @keyframes bttnFade {
   from {
     background: #dcffd9;
-    border: 2px solid #85CC7E;
 
   }
   to {
     background: #85CC7E;
-    border: 2px solid #dcffd9;
   }
+}
+
+/* TEMPORARY NAVBAR FIX */
+
+.invisible {
+  color: white;
+  background: white;
 }
 
 /* Code to create 'logo' */

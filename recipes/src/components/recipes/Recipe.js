@@ -13,6 +13,9 @@ const reqOps = {
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isActive: true
+    }
   }
 
   deleteRecepe() {
@@ -22,29 +25,50 @@ class Recipe extends React.Component {
       .catch(error => console.log(error))
   }
 
+  toggleClassName = () => {
+    this.setState({
+      isActive: !this.state.isActive
+    })
+  }
+
   render() {
+    const isActive = this.state.isActive;
     return (
       <div className='recipeCont'>
+        <h2>{this.props.title}</h2>
         <div>
-          <h2>{this.props.title}</h2>
-          <button className='fadeBttn' onClick={() => this.deleteRecepe()}>Delete</button>
+          <h2>Source:</h2>
+          <h3>{this.props.source}</h3>
         </div>
-        <h3>{this.props.source}</h3>
-        <p>{this.props.ingredients}</p>
-        <p>{this.props.instructions}</p>
-        <p>{this.props.category}</p>
-        <p>{this.props.userId}</p>
+        <div>
+          <h2>Ingredients:</h2>
+          <p>{this.props.ingredients}</p>
+        </div>
+        <div>
+          <h2>Instructions:</h2>
+          <p>{this.props.instructions}</p>
+        </div>
+        <div>
+          <h2>Category:</h2>
+          <p>{this.props.category}</p>
+        </div>
+        <div>
+          <button className='fadeBttn' onClick={() => this.deleteRecepe()}>Delete</button>
+          <button className='fadeBttn' onClick={() => this.toggleClassName()}>Update Recipe</button>
+        </div>
+        <div className={isActive ? "updateClose" : "updateOpen"}>
+          <UpdateRecipe
+            recipe={this.props.recipe}
+            id={this.props.id}
+            title={this.props.title}
+            source={this.props.source}
+            ingredients={this.props.ingredients}
+            instructions={this.props.instructions}
+            category={this.props.category}
+            userId={this.props.user_id}
+          />
+        </div>
 
-        <UpdateRecipe
-          recipe={this.props.recipe}
-          id={this.props.id}
-          title={this.props.title}
-          source={this.props.source}
-          ingredients={this.props.ingredients}
-          instructions={this.props.instructions}
-          category={this.props.category}
-          userId={this.props.user_id}
-        />
       </div>
     )
   }

@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React from 'react';
 import requiresAuth from '../auth/requiresAuth';
-import { Route, Link } from 'react-router-dom';
 
+import NavBar from './NavBar';
 import MyRecipes from './MyRecipes';
 import AddRecipe from './AddRecipe';
 
@@ -31,6 +31,11 @@ class RecipesHome extends React.Component {
       });
   };
 
+  logOut = () => {
+    localStorage.clear()
+    this.props.history.push('/')
+  }
+
   getUserId = (token) => {
     const base64Url = token.split('.')[1];
     const base64 = base64Url.replace('-', '+').replace('_', '/');
@@ -41,13 +46,18 @@ class RecipesHome extends React.Component {
   render() {
     return (
       <div className='recipeHomeCont'>
+        <NavBar 
+          logOut={this.logOut}
+        />
         <MyRecipes
           recipes={this.state.recipes}
           userId={this.state.userId}
+          toggleClassName={this.toggleClassName}
         /> 
         <AddRecipe
           recipes={this.state.recipes}
           getUserId={this.getUserId}
+          toggleClassName={this.toggleClassName}
         />
       </div>
     )
