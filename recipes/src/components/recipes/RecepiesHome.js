@@ -52,10 +52,12 @@ class RecipesHome extends React.Component {
         <MyRecipes
           recipes={this.state.recipes}
           userId={this.state.userId}
+          toggleClassName={this.toggleClassName}
         /> 
         <AddRecipe
           recipes={this.state.recipes}
           getUserId={this.getUserId}
+          toggleClassName={this.toggleClassName}
         />
       </div>
     )

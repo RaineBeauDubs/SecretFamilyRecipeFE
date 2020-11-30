@@ -35,16 +35,27 @@ class Recipe extends React.Component {
     const isActive = this.state.isActive;
     return (
       <div className='recipeCont'>
+        <h2>{this.props.title}</h2>
         <div>
-          <h2>{this.props.title}</h2>
-          <button className='fadeBttn' onClick={() => this.deleteRecepe()}>Delete</button>
+          <h2>Source:</h2>
+          <h3>{this.props.source}</h3>
         </div>
-        <h3>{this.props.source}</h3>
-        <p>{this.props.ingredients}</p>
-        <p>{this.props.instructions}</p>
-        <p>{this.props.category}</p>
-        <p>{this.props.userId}</p>
-        <button className='fadeBttn' onClick={() => this.toggleClassName()}>Update Recipe</button>
+        <div>
+          <h2>Ingredients:</h2>
+          <p>{this.props.ingredients}</p>
+        </div>
+        <div>
+          <h2>Instructions:</h2>
+          <p>{this.props.instructions}</p>
+        </div>
+        <div>
+          <h2>Category:</h2>
+          <p>{this.props.category}</p>
+        </div>
+        <div>
+          <button className='fadeBttn' onClick={() => this.deleteRecepe()}>Delete</button>
+          <button className='fadeBttn' onClick={() => this.toggleClassName()}>Update Recipe</button>
+        </div>
         <div className={isActive ? "updateClose" : "updateOpen"}>
           <UpdateRecipe
             recipe={this.props.recipe}
