@@ -34,7 +34,7 @@ class Recipe extends React.Component {
   render() {
     const isActive = this.state.isActive;
     return (
-      <div className='recipeCont'>
+      <div className='recipeCard'>
         <h2 className='recTitle'>{this.props.title}</h2>
         <div className='recSec'>
           <p className='recSecLeft'>Ingredients:</p>

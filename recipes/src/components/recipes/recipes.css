@@ -6,16 +6,11 @@
 
 /* RECIPE CARD STYLES */
 
-.recipeCont {
+.recipeCard {
   background: #dcffd9;
   margin: 1rem;
   padding: 1.5rem 2.5rem;
   border-radius: 1rem;
-}
-
-.recipeLink {
-  text-decoration: none;
-  color: black;
 }
 
 .recTitle {
@@ -41,7 +36,7 @@
 /* UPDATE STYLES */
 
 .updateClose {
-  display: none;
+  /* display: none; */
 }
 
 .recipeForm {
