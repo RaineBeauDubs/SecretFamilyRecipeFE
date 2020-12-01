@@ -44,7 +44,12 @@
 }
 
 .updateClose {
-  display: none;
+  /* display: none; */
+}
+
+.recipeForm {
+  display: flex;
+  flex-direction: column;
 }
 
 /* NAVIGATION STYLES */

@@ -45,12 +45,12 @@ class Recipe extends React.Component {
           <p className='recSecRight'>{this.props.instructions}</p>
         </div>
         <div className='recSec'>
-          <h3 className='recSecLeft'>Category:</h3>
-          <h3 className='recSecRight'>{this.props.category}</h3>
-        </div>
-        <div className='recSec'>
           <h3 className='recSecLeft'>Source:</h3>
           <h3 className='recSecRight'>{this.props.source}</h3>
+        </div>
+        <div className='recSec'>
+          <h3 className='recSecLeft'>Category:</h3>
+          <h3 className='recSecRight'>{this.props.category}</h3>
         </div>
         <div>
           <button className='fadeBttn' onClick={() => this.deleteRecepe()}>Delete</button>

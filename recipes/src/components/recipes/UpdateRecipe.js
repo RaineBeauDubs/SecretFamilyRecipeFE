@@ -45,38 +45,53 @@ class UpdateRecipe extends React.Component {
   render() {
     return (
       <div>
-      <form onSubmit={this.updateRecipe()}>
-          <input
-            type='text'
-            name='title'
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
-          <input
-            type='text'
-            name='source'
-            value={this.state.source}
-            onChange={this.handleChange}
-          />
-          <input
-            type='text'
-            name='ingredients'
-            value={this.state.ingredients}
-            onChange={this.handleChange}
-          />
-          <input
-            type='text'
-            name='instructions'
-            value={this.state.instructions}
-            onChange={this.handleChange}
-          />
-          <input
-            type='text'
-            name='category'
-            value={this.state.category}
-            onChange={this.handleChange}
-          />
-          <button  className='fadeBttn' type='submit'>Update recipe!</button>
+        <form className='recipeForm' onSubmit={this.updateRecipe()}>
+          <div>
+            <p className='recFormLeft'>Title:</p>
+            <input
+              type='text'
+              name='title'
+              value={this.state.title}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='recFormSec'>
+            <p className='recFormLeft'>Ingredients:</p>
+            <input
+              type='text'
+              name='ingredients'
+              value={this.state.ingredients}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='recFormSec'>
+            <p className='recFormLeft'>Instructions:</p>
+            <input
+              type='text'
+              name='instructions'
+              value={this.state.instructions}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='recFormSec'>
+            <p className='recFormLeft'>Source:</p>
+            <input
+              type='text'
+              name='source'
+              value={this.state.source}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='recFormSec'>
+            <p className='recFormLeft'> Category:</p>
+            <input
+              type='text'
+              name='category'
+              value={this.state.category}
+              onChange={this.handleChange}
+            />
+          </div>
+          <button className='fadeBttn' type='submit'>Update recipe!</button>
         </form>
       </div>
     )
