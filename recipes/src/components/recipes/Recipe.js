@@ -34,23 +34,23 @@ class Recipe extends React.Component {
   render() {
     const isActive = this.state.isActive;
     return (
-      <div className='recipeCont'>
-        <h2>{this.props.title}</h2>
-        <div>
-          <h2>Source:</h2>
-          <h3>{this.props.source}</h3>
+      <div className='recipeCard'>
+        <h2 className='recTitle'>{this.props.title}</h2>
+        <div className='recSec'>
+          <p className='recSecLeft'>Ingredients:</p>
+          <p className='recSecRight'>{this.props.ingredients}</p>
         </div>
-        <div>
-          <h2>Ingredients:</h2>
-          <p>{this.props.ingredients}</p>
+        <div className='recSec'>
+          <p className='recSecLeft'>Instructions:</p>
+          <p className='recSecRight'>{this.props.instructions}</p>
         </div>
-        <div>
-          <h2>Instructions:</h2>
-          <p>{this.props.instructions}</p>
+        <div className='recSec'>
+          <h3 className='recSecLeft'>Source:</h3>
+          <h3 className='recSecRight'>{this.props.source}</h3>
         </div>
-        <div>
-          <h2>Category:</h2>
-          <p>{this.props.category}</p>
+        <div className='recSec'>
+          <h3 className='recSecLeft'>Category:</h3>
+          <h3 className='recSecRight'>{this.props.category}</h3>
         </div>
         <div>
           <button className='fadeBttn' onClick={() => this.deleteRecepe()}>Delete</button>
@@ -68,7 +68,6 @@ class Recipe extends React.Component {
             userId={this.props.user_id}
           />
         </div>
-
       </div>
     )
   }

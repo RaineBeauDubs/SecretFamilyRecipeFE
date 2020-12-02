@@ -55,43 +55,55 @@ class AddRecipe extends React.Component {
     const isActive = this.state.isActive;
     return (
       <div>
-      <button className='fadeBttn' onClick={() => this.toggleClassName()}>Add a New Recipe!</button>
-        <form className={isActive ? "updateClose" : "updateOpen"} onSubmit={this.addNewRecipe}>
-          <input
-            type='text'
-            name='title'
-            placeholder='Title'
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
-          <input
-            type='text'
-            name='source'
-            placeholder='Source'
-            value={this.state.source}
-            onChange={this.handleChange}
-          />
-          <input
-            type='text'
-            name='ingredients'
-            placeholder='Ingredients'
-            value={this.state.ingredients}
-            onChange={this.handleChange}
-          />
-          <input
-            type='text'
-            name='instructions'
-            placeholder='Instructions'
-            value={this.state.instructions}
-            onChange={this.handleChange}
-          />
-          <input
-            type='text'
-            name='category'
-            placeholder='Category'
-            value={this.state.category}
-            onChange={this.handleChange}
-          />
+        <button className='fadeBttn' onClick={() => this.toggleClassName()}>Add a New Recipe</button>
+        <form className={isActive ? "updateClose" : "recipeCard"} onSubmit={this.addNewRecipe}>
+          <div className='recipeForm'>
+            <div className='recFormSec'>
+              <p className='recFormLeft'>Title:</p>
+              <input
+                type='text'
+                name='title'
+                value={this.state.title}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className='recFormSec'>
+              <p className='recFormLeft'>Source:</p>
+              <input
+                type='text'
+                name='source'
+                value={this.state.source}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className='recFormSec'>
+              <p className='recFormLeft'>Ingredients:</p>
+              <input
+                type='text'
+                name='ingredients'
+                value={this.state.ingredients}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className='recFormSec'>
+              <p className='recFormLeft'>Instructions:</p>
+              <input
+                type='text'
+                name='instructions'
+                value={this.state.instructions}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className='recFormSec'>
+              <p className='recFormLeft'>Category:</p>
+              <input
+                type='text'
+                name='category'
+                value={this.state.category}
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
           <button className='fadeBttn' type='submit'>Add recipe!</button>
         </form>
       </div>
