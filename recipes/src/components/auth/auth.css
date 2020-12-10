@@ -1,0 +1,37 @@
+.authCont {
+  background: white;
+  padding: 3rem;
+  border-radius: 2rem;
+  height: 100%;
+}
+
+.authCard {
+  background: #dcffd9;
+  margin: 1rem;
+  padding: 7rem 2.5rem;
+  border-radius: 1rem;
+}
+
+.authCard h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: #85CC7E underline;
+  margin-bottom: 2.5rem;
+}
+
+.authCard form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.authCard input {
+  height: 1.5rem;
+  width: 35%;
+  margin-bottom: 1.5rem;
+}
+
+.authCard button {
+  font-size: 1.2rem;
+  padding: 0.3rem;
+}
