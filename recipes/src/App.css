@@ -114,3 +114,13 @@ h3 {
   top: 22rem;
   left: 16rem;
 } */
+
+/* 
+Things to add in BE and FE once BE is updated
+- an array of ingredients
+- measurements of ingredients, strictly FE or would involve BE?
+- intricate seeds that are public
+- instructions also possibly array? (can separate and number in FE easily, better for display, thoughts?
+- Set categories, probably just FE, right? DD menu? Sub-categories?
+- Filter feature to filter by category and sub-
+*/
