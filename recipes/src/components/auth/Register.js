@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import './auth.css';
+
 class Register extends React.Component {
   state = {
     username: '',
