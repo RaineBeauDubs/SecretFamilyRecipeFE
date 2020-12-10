@@ -49,7 +49,7 @@ class Register extends React.Component {
               value={this.state.password}
               onChange={this.handleInput}
             />
-            <button type='submit'>Submit</button>
+            <button className='fadeBttn' type='submit'>Submit</button>
           </form>
         </div>
       </div>

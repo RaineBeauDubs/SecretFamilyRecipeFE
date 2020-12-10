@@ -32,25 +32,25 @@ class Login extends React.Component {
   render() {
     return (
       <div className='authCont'>
-      <div className='authCard'>
-        <h2>Log-In</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            name='username'
-            id='username'
-            placeholder='Username:'
-            value={this.state.username}
-            onChange={this.handleInput}
-          />
-          <input
-            name='password'
-            id='password'
-            placeholder='Password:'
-            value={this.state.password}
-            onChange={this.handleInput}
-          />
-          <button type='submit'>Submit</button>
-        </form>
+        <div className='authCard'>
+          <h2>Log-In</h2>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              name='username'
+              id='username'
+              placeholder='Username:'
+              value={this.state.username}
+              onChange={this.handleInput}
+            />
+            <input
+              name='password'
+              id='password'
+              placeholder='Password:'
+              value={this.state.password}
+              onChange={this.handleInput}
+            />
+            <button className='fadeBttn' type='submit'>Submit</button>
+          </form>
         </div>
       </div>
     )
