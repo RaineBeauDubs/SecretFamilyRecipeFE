@@ -31,7 +31,8 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='authCont'>
+      <div className='authCard'>
         <h2>Log-In</h2>
         <form onSubmit={this.handleSubmit}>
           <input
@@ -50,6 +51,7 @@ class Login extends React.Component {
           />
           <button type='submit'>Submit</button>
         </form>
+        </div>
       </div>
     )
   }
