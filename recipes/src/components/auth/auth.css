@@ -30,3 +30,8 @@
   width: 35%;
   margin-bottom: 1.5rem;
 }
+
+.authCard button {
+  font-size: 1.2rem;
+  padding: 0.3rem;
+}

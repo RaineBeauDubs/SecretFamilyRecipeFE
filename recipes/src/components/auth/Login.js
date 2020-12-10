@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import './auth.css';
 
@@ -51,6 +52,12 @@ class Login extends React.Component {
             />
             <button className='fadeBttn' type='submit'>Submit</button>
           </form>
+        </div>
+        <div>
+          <p>Don't have an account?</p>
+          <Link to='/register'>
+            <button className='fadeBttn'>Sign-Up Here!</button>
+          </Link>
         </div>
       </div>
     )

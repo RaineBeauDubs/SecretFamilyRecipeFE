@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 import './auth.css';
 
@@ -51,6 +53,12 @@ class Register extends React.Component {
             />
             <button className='fadeBttn' type='submit'>Submit</button>
           </form>
+        </div>
+        <div>
+          <p>Already have an account?</p>
+          <Link to='/login'>
+            <button className='fadeBttn'>Log-In Here!</button>
+          </Link>
         </div>
       </div>
     )
