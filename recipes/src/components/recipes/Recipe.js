@@ -18,7 +18,7 @@ class Recipe extends React.Component {
     }
   }
 
-  deleteRecepe() {
+  deleteRecipe() {
     axios
       .delete(`http://localhost:5000/api/recipes/${this.props.id}`, reqOps)
       .then(response => console.log(response))
@@ -52,10 +52,12 @@ class Recipe extends React.Component {
           <h3 className='recSecLeft'>Category:</h3>
           <h3 className='recSecRight'>{this.props.category}</h3>
         </div>
-        <div>
-          <button className='fadeBttn' onClick={() => this.deleteRecepe()}>Delete</button>
-          <button className='fadeBttn' onClick={() => this.toggleClassName()}>Update Recipe</button>
-        </div>
+        {this.props.userId == this.props.recUserId &&
+          <div>
+            <button className='fadeBttn' onClick={() => this.deleteRecipe()}>Delete</button>
+            <button className='fadeBttn' onClick={() => this.toggleClassName()}>Update Recipe</button>
+          </div>
+        }
         <div className={isActive ? "updateClose" : "updateOpen"}>
           <UpdateRecipe
             recipe={this.props.recipe}
