@@ -14,7 +14,21 @@ class Recipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isActive: true
+      isActive: true,
+      ingredientsList: [],
+      instructionsList: []
+    }
+  }
+
+  componentDidMount() {
+    // const commaSplit = /:\s|,\s/;
+    if (this.state.ingredientsList.length === 0) {
+      // this.state.ingredientsList.push(this.props.ingredients.split(commaSplit))
+      this.setState({
+        ingredientsList: this.props.ingredients.split(',')
+        })
+      console.log("ingredientsList" + this.state.ingredientsList)
+
     }
   }
 
@@ -33,12 +47,18 @@ class Recipe extends React.Component {
 
   render() {
     const isActive = this.state.isActive;
+    console.log(this.props.ingredients);
+    // const ingredientsList = [(`${this.props.ingredients}`.split(','))];
     return (
       <div className='recipeCard'>
         <h2 className='recTitle'>{this.props.title}</h2>
         <div className='recSec'>
           <p className='recSecLeft'>Ingredients:</p>
-          <p className='recSecRight'>{this.props.ingredients}</p>
+          {this.state.ingredientsList.map(ingr => {
+            return (
+              <p className='ingr'>{ingr}</p>
+            )
+          })}
         </div>
         <div className='recSec'>
           <p className='recSecLeft'>Instructions:</p>
