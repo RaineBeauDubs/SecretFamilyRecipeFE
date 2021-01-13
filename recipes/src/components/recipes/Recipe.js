@@ -23,7 +23,8 @@ class Recipe extends React.Component {
   componentDidMount() {
     if (this.state.ingredientsList.length === 0) {
       this.setState({
-        ingredientsList: this.props.ingredients.split(',')
+        ingredientsList: this.props.ingredients.split(','),
+        instructionsList: this.props.instructions.split(',')
       })
       console.log("ingredientsList" + this.state.ingredientsList)
 
@@ -61,7 +62,13 @@ class Recipe extends React.Component {
         </div>
         <div className='recSec'>
           <p className='recSecLeft'>Instructions:</p>
-          <p className='recSecRight'>{this.props.instructions}</p>
+          <div>
+          {this.state.instructionsList.map(ingr => {
+              return (
+                <p className='instr'>{ingr}</p>
+              )
+            })}
+          </div>
         </div>
         <div className='recSec'>
           <h3 className='recSecLeft'>Source:</h3>
