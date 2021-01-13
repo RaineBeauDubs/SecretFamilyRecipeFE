@@ -24,7 +24,7 @@ class Recipe extends React.Component {
     if (this.state.ingredientsList.length === 0) {
       this.setState({
         ingredientsList: this.props.ingredients.split(',')
-        })
+      })
       console.log("ingredientsList" + this.state.ingredientsList)
 
     }
@@ -51,11 +51,13 @@ class Recipe extends React.Component {
         <h2 className='recTitle'>{this.props.title}</h2>
         <div className='recSec'>
           <p className='recSecLeft'>Ingredients:</p>
-          {this.state.ingredientsList.map(ingr => {
-            return (
-              <p className='ingr'>{ingr}</p>
-            )
-          })}
+          <div>
+            {this.state.ingredientsList.map(ingr => {
+              return (
+                <p className='ingr'>{ingr}</p>
+              )
+            })}
+          </div>
         </div>
         <div className='recSec'>
           <p className='recSecLeft'>Instructions:</p>
