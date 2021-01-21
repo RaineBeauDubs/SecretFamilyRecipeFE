@@ -7,10 +7,11 @@ const MyRecipes = ({recipes, userId}) => {
   return (
     <div>
       {recipes.map(recipe => {
-        if (recipe.user_id == userId) {
+        if (recipe.user_id == userId || recipe.private == 'false') {
           return (
             <div>
               <Recipe
+                userId={userId}
                 recipe={recipe}
                 id={recipe.id}
                 key={recipe.id}
@@ -19,7 +20,7 @@ const MyRecipes = ({recipes, userId}) => {
                 ingredients={recipe.ingredients}
                 instructions={recipe.instructions}
                 category={recipe.category}
-                userId={recipe.user_id}
+                recUserId={recipe.user_id}
               />
             </div>
           )

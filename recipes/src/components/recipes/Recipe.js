@@ -14,11 +14,24 @@ class Recipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isActive: true
+      isActive: true,
+      ingredientsList: [],
+      instructionsList: []
     }
   }
 
-  deleteRecepe() {
+  componentDidMount() {
+    if (this.state.ingredientsList.length === 0) {
+      this.setState({
+        ingredientsList: this.props.ingredients.split(','),
+        instructionsList: this.props.instructions.split(',')
+      })
+      console.log("ingredientsList" + this.state.ingredientsList)
+
+    }
+  }
+
+  deleteRecipe() {
     axios
       .delete(`http://localhost:5000/api/recipes/${this.props.id}`, reqOps)
       .then(response => console.log(response))
@@ -33,16 +46,29 @@ class Recipe extends React.Component {
 
   render() {
     const isActive = this.state.isActive;
+    console.log(this.props.ingredients);
     return (
       <div className='recipeCard'>
         <h2 className='recTitle'>{this.props.title}</h2>
         <div className='recSec'>
           <p className='recSecLeft'>Ingredients:</p>
-          <p className='recSecRight'>{this.props.ingredients}</p>
+          <div>
+            {this.state.ingredientsList.map(ingr => {
+              return (
+                <p className='ingr'>{ingr}</p>
+              )
+            })}
+          </div>
         </div>
         <div className='recSec'>
           <p className='recSecLeft'>Instructions:</p>
-          <p className='recSecRight'>{this.props.instructions}</p>
+          <div>
+          {this.state.instructionsList.map(ingr => {
+              return (
+                <p className='instr'>{ingr}</p>
+              )
+            })}
+          </div>
         </div>
         <div className='recSec'>
           <h3 className='recSecLeft'>Source:</h3>
@@ -52,10 +78,12 @@ class Recipe extends React.Component {
           <h3 className='recSecLeft'>Category:</h3>
           <h3 className='recSecRight'>{this.props.category}</h3>
         </div>
-        <div>
-          <button className='fadeBttn' onClick={() => this.deleteRecepe()}>Delete</button>
-          <button className='fadeBttn' onClick={() => this.toggleClassName()}>Update Recipe</button>
-        </div>
+        {this.props.userId == this.props.recUserId &&
+          <div>
+            <button className='fadeBttn' onClick={() => this.deleteRecipe()}>Delete</button>
+            <button className='fadeBttn' onClick={() => this.toggleClassName()}>Update Recipe</button>
+          </div>
+        }
         <div className={isActive ? "updateClose" : "updateOpen"}>
           <UpdateRecipe
             recipe={this.props.recipe}
